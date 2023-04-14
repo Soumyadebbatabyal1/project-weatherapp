@@ -46,10 +46,12 @@ Overall, this is a simple yet useful web application that allows users to get th
 **If you wonder how to use this app follow these steps:
 
 - Navigate to the Weather App web page i.e.,  https://64e6-116-206-201-212.ngrok-free.app/
-- Enter the name of the city you would like to get weather data for in the input field provided.
-- Click the "Get Forecast" button to retrieve the weather data.
-- The current weather information and 5-day weather forecast will be displayed on the page.
-
+-Enter a keyword or phrase related to the type of article you would like to find in the Get button.
+- Press the "Search" button or hit enter on your keyboard.
+- A list of articles related to your search will appear below the search bar.
+- Click on any article to view its details, including the title, author, description, and publication date.
+- You can also save articles by clicking on the "Save" button below each article. Saved articles can be viewed on the "Saved Articles" page.
+- To remove a saved article, click on the "Remove" button below the article on the "Saved Articles" page.
 
 **Implementation Details:
 
@@ -60,11 +62,55 @@ The Weather App is implemented as a Node.js application using the Express framew
 The server-side logic for the Weather App is implemented in the app.js file. This file contains the following code:
 
 ```
-   const express = require('express');
+    const express = require('express');
    const bodyParser = require('body-parser');
    const request = require('request');
-   
 ```
+
+`express` is used to handle server-side logic and routing, `body-parser` is used to parse incoming request bodies, and `request` is used to make API requests.
+
+**API Key:
+
+An API key is required to use the OpenWeatherMap API. The key is stored in the apiKey variable:
+
+```
+const apiKey = 'MY_API_KEY_HERE';
+```
+**Express Configuration:
+
+The following code sets up the Express app and configures it to use EJS as the view engine:
+
+```
+const app = express();
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
+```
+
+**The GET route displays the home page:
+
+```
+app.get('/', function(req, res) {
+  res.render('index', { forecasts: null, city: null, error: null });
+});
+```
+
+
+The index.ejs template is rendered with empty forecast, city, and error variables.
+
+
+**The POST route handles:
+
+the form submission by extracting the user's input city name from the request body, constructing a URL to call the OpenWeatherMap API, and making a GET request to the API using the request module. If an error occurs during the API call, an error message is rendered using the index template. If the API call is successful, the response body is parsed as JSON and the necessary weather data is extracted and used to render the index template with the current weather and forecast data.
+
+
+#### Conclusion:
+In conclusion, the weather app with a 5-day forecast is a useful tool for staying up to date on weather conditions. It provides users with accurate information about the current weather as well as the forecasted weather for the next five days. With this information, users can plan their activities accordingly and make sure they are prepared for any changes in the weather. The app's user-friendly interface makes it easy for users to access the information they need quickly and efficiently. Overall, the weather app with a 5-day forecast is an excellent tool for anyone who wants to stay informed about weather conditions and plan their activities accordingly.
+
+Last but not the least I want to thank Prof. David Malan for this amazing course. Hope you will bring us more courses like this.
+
+
+
 
 
 
