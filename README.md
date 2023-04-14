@@ -8,7 +8,12 @@ This is a web application that allows users to get the current weather and a 5-d
 
 ## Video Demo
 
-Insert gif or link to demo
+https://youtu.be/CUNRs72Tm0Q
+
+
+## URL of my weather-app
+
+https://64e6-116-206-201-212.ngrok-free.app/
 
 
 ## Technologies Used
