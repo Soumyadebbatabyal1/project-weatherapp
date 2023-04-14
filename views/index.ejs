@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Weather App</h1>
+  </header>
+  <main>
+    <form action="/" method="post">
+      <label for="city">Enter a city name:</label>
+      <input type="text" id="city" name="city" placeholder="e.g. London">
+      <button type="submit">Get Forecast</button>
+    </form>
+
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <% if (forecasts) { %>
+      <div class="current">
+        <h2>Current Weather in <%= city %></h2>
+        <div class="weather-icon">
+          <img src="http://openweathermap.org/img/w/<%= icon %>.png">
+          <p><%= description %></p>
+        </div>
+        <div class="weather-details">
+          <p><span class="temperature"><%= temperature %></span> &deg;C</p>
+          <p>Humidity: <%= humidity %>%</p>
+          <p>Wind Speed: <%= windSpeed %> m/s</p>
+        </div>
+      </div>
+      <div class="forecast">
+        <h2>5-Day Weather Forecast</h2> 
+        <% for (let i = 0; i < forecasts.length; i++) { %>
+          <div class="forecast-day">
+            <h3><%= forecasts[i].day %></h3>
+            <div class="weather-icon">
+              <img src="http://openweathermap.org/img/w/<%= forecasts[i].icon %>.png">
+              <p><%= forecasts[i].description %></p>
+            </div>
+            <div class="weather-details">
+              <p><span class="temperature"><%= forecasts[i].temperature %></span> &deg;C</p>
+              <p>Humidity: <%= forecasts[i].humidity %>%</p>
+              <p>Wind Speed: <%= forecasts[i].windSpeed %> m/s</p>
+            </div>
+          </div>
+        <% } %>
+      </div>
+      
+    <% } %>
+  </main>
+  
+</body>
+</html>

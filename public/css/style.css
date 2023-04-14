@@ -1,0 +1,161 @@
+/* Body styles */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #06435e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Main styles */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.02);
+}
+
+button[type="submit"] {
+  background: linear-gradient(to bottom, #1595cc, #0fd2f0);
+  /* Replace background-color with a linear gradient that goes from light to dark blue */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 8px 16px;
+  width: 15%;
+}
+
+
+button[type="submit"]:hover {
+  background: linear-gradient(to bottom, #4eb1f3, #39c6ed);
+  /* Add a hover effect with a darker gradient */
+}
+
+
+/* Error message styles */
+.error {
+  background-color: #ffcccc;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Current weather styles */
+.current {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.02);
+}
+
+.current h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.weather-icon img {
+  vertical-align: middle;
+}
+
+.weather-details {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.weather-details p {
+  margin: 5px 0;
+}
+
+.temperature {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/* Forecast styles */
+.forecast {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.02);
+  
+}
+
+.forecast h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.forecast-day {
+  margin-bottom: 20px;
+}
+
+.forecast-day h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.forecast-day .weather-icon {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.forecast-day .weather-icon img {
+  vertical-align: middle;
+}
+
+.forecast-day .weather-details {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.forecast-day .weather-details p {
+  margin: 5px 0;
+}
+
+.forecast-day .temperature {
+  font-weight: bold;
+}
