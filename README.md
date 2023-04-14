@@ -38,7 +38,7 @@ https://64e6-116-206-201-212.ngrok-free.app/
 
 **The HTML file** 
 
-`index.ejs`contains a form for users to enter a city name and a section to display the current weather and 5-day forecast. The CSS file `style.css` styles the HTML elements.
+`index.ejs`contains a form for users to enter a city name and a section to display the current weather and 5-day forecast. The CSS file `style.css` styles the HTML elements
 
 
 **JavaScript**
