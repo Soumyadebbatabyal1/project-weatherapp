@@ -59,9 +59,11 @@ The Weather App is implemented as a Node.js application using the Express framew
 
 The server-side logic for the Weather App is implemented in the app.js file. This file contains the following code:
 
-```const express = require('express');
+```
+   const express = require('express');
    const bodyParser = require('body-parser');
    const request = require('request');
+   
 ```
 
 
